@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<link rel="stylesheet" href="style.css">
+<head>
+</head>
+<body>
+    <section class="container">
+<form id="form">
+    <h1 class="Title"> Registration Form</h1>
+    <div class="names">
+        <div class="name1">
+            <label for="name">First name:</label> 
+            <input type="text" id="fname" name="fname" placeholder="Enter FIrstname"> 
+        </div>
+        <div class="name1">
+            <label for="name">Last name:</label> 
+            <input type="text" id="lname" name="lname" placeholder="Enter Lastname"> 
+        </div>
+        <div class="name1">
+            <label for="name">Nickname:</label> 
+            <input type="text" id="Nname" name="Nname" placeholder="Enter Nickname"> 
+        </div>
+        <div class="name1">
+            <label for="name">Email:</label> 
+            <input type="text" id="mail" name="mail" placeholder="email@gmail.com">
+        </div>
+        <div class="name1">
+            <label for="name">Passwords:</label> 
+            <input type="password" name="password" id="password" placeholder="Enter Password">
+        </div>
+        <div class="name1">
+            <div>
+                <label for="name">Date of Birth:</label> 
+                <input type="date" id="dob"> 
+             </div>
+        </div>
+    </div>
+    <div class="gennum">
+        <div class="gender">
+            <label>Gender </label> <br>
+            <input type="radio" name="gender" value="male"> Male 
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="Others"> Others
+        </div>
+        <div class="mnumber">
+            <label for="number">Mobile:</label> 
+            <input type="text" id="number" name="number" placeholder="Enter Mobile No.">
+        </div>
+        <div class="address">
+            <label for="address">Address:</label> 
+            <textarea id="address" name="address" rows="4" cols="30"></textarea>
+        </div>
+    </div>
+    <div class="btn">
+            <input type="submit" class="btn1" onclick="checkpassword();checkAge();" value="Submit">
+            <input type="reset" class="btn2" value="Reset"> 
+    </div>
+</form>
+</section>
+<!--script-->
+<script>
+   function checkpassword(){
+	let password = document.getElementById("password").value;
+	console.log(password);
+
+	if (password.length < 8) {
+		alert("Password must be at least 8 characters long");
+	}
+}
+function checkAge() {
+			// Get the date of birth from the input field
+			const dob = document.getElementById("dob").value;
+
+			// Calculate the age by subtracting the date of birth from the current date
+			const age = new Date(new Date() - new Date(dob)).getFullYear() - 1970;
+
+			// Check if the age is above 21
+			if (age >= 21) {
+				alert("You are above 21 years old!");
+			} else {
+				alert("You are not above 21 years old.");
+			}
+		}
+
+</script>
+</body>
+</html>
